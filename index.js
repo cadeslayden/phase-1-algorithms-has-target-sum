@@ -1,17 +1,43 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  const seenNumbers = {};
+
+  for (const number of array) {
+    const difference = target - number;
+    if (difference in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+
+  return false;
 }
 
+
+
 /* 
-  Write the Big O time complexity of your function here
+  runtime: 0(n)
 */
 
 /* 
-  Add your pseudocode here
+  function hasTargetSum with arguments (array, target)
+    declare seenNumbers = {}
+
+    for (declare number of each integer in array) {
+      declare differnce = target - number;
+      if (difference in seenNumbers)
+      seenNumbers[number] = true
+    }
+    else return false
 */
 
 /*
-  Add written explanation of your solution here
+declaring a function called hasTargetSum with two arguments array and target
+declaring seenNumbers thats equal to an empty array
+
+for each integer in the array
+take the difference between the target and that number
+if that difference which is put into seenNumbers is equal to a number thats already in our array 
+we return true
+
+if not, we return false
 */
 
 // You can run `node index.js` to view these console logs
